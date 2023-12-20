@@ -1,38 +1,66 @@
 {
-  "name": "personal-website-wii",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+	"name": "personal-website-wii",
+	"version": "0.1",
+	"description": "This project is my personal website based on a reproduction of of the graphical interface of the Wii system.",
+	"author": "Léo Mullier <leo.mullier@outlook.fr> (https://leomullier.onthewifi.com)",
+	"bugs": {
+		"url": "https://github.com/LeoMullier/personal-website-wii/issues"
+	},
+	"homepage": "https://github.com/LeoMullier/personal-website-wii",
+	"private": true,
+	"dependencies": {
+		"@testing-library/jest-dom": "^5.17.0",
+		"@testing-library/react": "^13.4.0",
+		"@testing-library/user-event": "^13.5.0",
+		"i18next": "^23.7.11",
+		"i18next-browser-languagedetector": "^7.2.0",
+		"luxon": "^3.4.4",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-i18next": "^13.5.0",
+		"react-scripts": "5.0.1",
+		"web-vitals": "^2.1.4"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject",
+		"storybook": "storybook dev -p 6006",
+		"build-storybook": "storybook build"
+	},
+	"eslintConfig": {
+		"extends": [
+			"react-app",
+			"react-app/jest",
+			"plugin:storybook/recommended"
+		]
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"devDependencies": {
+		"@storybook/addon-essentials": "^7.6.6",
+		"@storybook/addon-interactions": "^7.6.6",
+		"@storybook/addon-links": "^7.6.6",
+		"@storybook/addon-onboarding": "^1.0.10",
+		"@storybook/blocks": "^7.6.6",
+		"@storybook/preset-create-react-app": "^7.6.6",
+		"@storybook/react": "^7.6.6",
+		"@storybook/react-webpack5": "^7.6.6",
+		"@storybook/test": "^7.6.6",
+		"eslint-plugin-storybook": "^0.6.15",
+		"prop-types": "^15.8.1",
+		"storybook": "^7.6.6",
+		"webpack": "^5.89.0"
+	}
 }
