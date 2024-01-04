@@ -1,8 +1,8 @@
 // Import the required modules
 import i18n from "i18next"
 import LanguageDetector from "i18next-browser-languagedetector"
-import DateTime from "luxon"
-import initReactI18next from "react-i18next"
+import { DateTime } from "luxon" // Import DateTime directly from luxon
+import { initReactI18next } from "react-i18next";
 
 // Import the required files
 import HomeMenuFr from "./Locales/Fr/HomeMenu.json"
@@ -37,8 +37,8 @@ i18n.init({
 	},
 })
 
-// Add a date formater
-i18n.services.formatter.add("DATE_HUGE", function(Value, Language, Options) {
+// Add a date formatter
+i18n.services.formatter.add("DATE_HUGE", function(Value, Language) {
 	return DateTime.fromJSDate(Value).setLocale(Language).toLocaleString(DateTime.DATE_HUGE);
 })
 

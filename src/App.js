@@ -1,4 +1,5 @@
 // Importing all dependencies
+import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import { useTranslation } from "react-i18next";
@@ -13,6 +14,7 @@ const lngs = {
 // Create the component
 function App() {
 	const { t, i18n } = useTranslation(['WiiMenu']);
+	
 
 	// Render the component
 	return (

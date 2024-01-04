@@ -1,13 +1,474 @@
 body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  outline: none;
+  background-color: #26c6da;
+  padding: 0;
+  color: #333;
+  font-style: 400;
+  font-size: 100%;
+  font-size: 16px;
+  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1,
+p,
+label {
+  vertical-align: baseline;
+  vertical-align: middle;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  overflow: visible;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100%;
+  line-height: 1;
+  line-height: normal;
+  font-family: inherit;
+  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@font-face {
+  font-style: italic;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/nunitosans/v6/pe0oMImSLYBIv1o4X1M8cce4E9lKcw.ttf)
+    format("truetype");
+  font-family: "Nunito Sans";
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/nunitosans/v6/pe0qMImSLYBIv1o4X1M8cce9I94.ttf)
+    format("truetype");
+  font-family: "Nunito Sans";
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 800;
+  src: url(https://fonts.gstatic.com/s/nunitosans/v6/pe03MImSLYBIv1o4X1M8cc8aBc5tU1Q.ttf)
+    format("truetype");
+  font-family: "Nunito Sans";
+}
+
+.type-light {
+  font-weight: 300;
+  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.type-bold {
+  font-weight: 800;
+  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.type-italic {
+  font-style: italic;
+  font-weight: 400;
+  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  border-radius: 0;
+  padding: 0.75rem 0;
+  color: #333;
+  font-style: 400;
+  font-size: 14px;
+  line-height: 20px;
+  line-height: 1.5rem !important;
+  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.checkbox {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  width: 44px;
+  height: 3rem;
+}
+
+.checkbox input[type="checkbox"] {
+  visibility: hidden;
+  font-size: 1em;
+}
+
+.checkbox input[type="checkbox"] + span:before {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: auto;
+  bottom: auto;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  box-shadow: #2cc5d2 0 0 0 1px inset;
+  background: transparent;
+  width: 0.85em;
+  height: 0.85em;
+  content: "";
+}
+
+.checkbox input[type="checkbox"]:checked + span:before {
+  margin-top: -1px;
+  box-shadow: none;
+
+  content: "\e65e";
+  color: #2cc5d2;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  line-height: 1;
+  font-family: "percolate";
+  text-transform: none;
+}
+
+.input-symbol {
+  display: inline-block;
+  position: relative;
+}
+
+.input-symbol.error [class^="icon-"],
+.input-symbol.error [class*=" icon-"] {
+  color: #ff4400;
+}
+
+.input-symbol [class^="icon-"],
+.input-symbol [class*=" icon-"] {
+  left: 1em;
+}
+
+.input-symbol input {
+  padding-left: 3em;
+}
+
+.input-symbol input {
+  width: 100%;
+}
+
+.input-symbol input:focus + [class^="icon-"],
+.input-symbol input:focus + [class*=" icon-"] {
+  color: #2cc5d2;
+}
+
+.input-symbol [class^="icon-"],
+.input-symbol [class*=" icon-"] {
+  position: absolute;
+  top: 50%;
+  transform: translate3d(0, -50%, 0);
+  transition: all 300ms ease-in;
+  background: transparent;
+  width: 1em;
+  height: 1em;
+  color: #aaa;
+  font-size: 1em;
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: normal;
+  src: url("./assets/icon/percolate.eot?-5w3um4");
+  src: url("./assets/icon/percolate.eot?#iefix5w3um4")
+      format("embedded-opentype"),
+    url("./assets/icon/percolate.woff?5w3um4") format("woff"),
+    url("./assets/icon/percolate.ttf?5w3um4") format("truetype"),
+    url("./assets/icon/percolate.svg?5w3um4") format("svg");
+  font-family: "percolate";
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  font-family: "percolate";
+  text-transform: none;
+}
+
+.icon-star:before {
+  content: "\e608";
+}
+
+.icon-face-sad:before {
+  content: "\e60f";
+}
+
+.icon-check:before {
+  content: "\e65e";
+}
+
+.list-heading {
+  background: #f8f8f8;
+  padding-left: 15px;
+  color: #aaa;
+  font-weight: 800;
+  font-size: 11px;
+  line-height: 40px;
+  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: 0.3em;
+  text-indent: 0.3em;
+  text-transform: uppercase;
+}
+
+.list-heading .icon-sync {
+  display: inline-block;
+  opacity: 1;
+  animation: spin 2s infinite linear;
+  margin-right: 4px;
+}
+
+.list-item {
+  display: flex;
+  flex-wrap: wrap;
+  transition: all ease-out 150ms;
+  background: white;
+  width: 100%;
+  height: 3rem;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.list-item .title {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.list-item input[type="text"] {
+  background: transparent;
+  width: 100%;
+}
+
+.list-item input[type="text"]:focus {
+  cursor: text;
+}
+
+.pin-button {
+  transition: all 200ms ease-in;
+  outline: none;
+  border: none;
+  background: transparent;
+  width: 3rem;
+  height: 3rem;
+  color: #eee;
+  font-size: 16px;
+  line-height: 3rem;
+  text-align: center;
+}
+
+.pin-button:hover {
+  color: #2cc5d2;
+}
+.pin-button:focus {
+  outline-color: transparent;
+}
+
+.pin-button:active {
+  color: #555;
+}
+
+.list-item.TASK_PINNED .icon-star {
+  color: #2cc5d2;
+}
+
+.list-item.TASK_ARCHIVED input[type="text"] {
+  color: #4a5568;
+  text-decoration: line-through;
+}
+
+.list-item:hover {
+  background-image: linear-gradient(to bottom, #e5f9f7 0%, #f0fffd 100%);
+}
+
+.list-item:hover .checkbox {
+  cursor: pointer;
+}
+
+.list-item + .list-item {
+  border-top: 1px solid #f0f9fb;
+}
+
+.list-item.checked input[type="text"] {
+  color: #ccc;
+  text-decoration: line-through;
+}
+
+.list-item.checked .delete-item {
+  display: inline-block;
+}
+
+.loading-item {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding-left: 16px;
+  width: 100%;
+  height: 3rem;
+  line-height: 1rem;
+}
+
+.loading-item .glow-checkbox,
+.loading-item .glow-text span {
+  display: inline-block;
+  animation: glow 1.5s ease-in-out infinite;
+  cursor: progress;
+  background: #eee;
+  color: transparent;
+}
+
+.loading-item .glow-checkbox {
+  margin-right: 16px;
+  width: 12px;
+  height: 12px;
+}
+
+.loading-item + .loading-item {
+  border-top: 1px solid #f0f9fb;
+}
+
+.list-items {
+  position: relative;
+  background: white;
+  min-height: 288px;
+}
+
+.list-items .select-placeholder {
+  border: none;
+  width: 48px;
+}
+
+.wrapper-message {
+  position: absolute;
+  top: 45%;
+  right: 0;
+  bottom: auto;
+  left: 0;
+  transform: translate3d(0, -50%, 0);
+  width: auto;
+  height: auto;
+  text-align: center;
+}
+
+.wrapper-message [class^="icon-"],
+.wrapper-message [class*=" icon-"] {
+  display: block;
+  color: #2cc5d2;
+  font-size: 48px;
+  line-height: 56px;
+}
+
+.wrapper-message .title-message {
+  color: #4a5568;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.wrapper-message .subtitle-message {
+  color: #4a5568;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.page.lists-show {
+  background: white;
+  min-height: 100vh;
+}
+
+.page.lists-show nav {
+  background: #d3edf4;
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 40em) {
+  .page.lists-show nav {
+    text-align: left;
+  }
+}
+
+.page.lists-show nav .title-page {
+  display: inline-block;
+  vertical-align: top;
+  cursor: pointer;
+  max-width: 100%;
+  overflow: hidden;
+  color: #1c3f53;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 24px;
+  line-height: 2rem;
+  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

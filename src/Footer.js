@@ -1,6 +1,7 @@
 // Import the modules
 import { DateTime } from "luxon";
 import { useTranslation } from "react-i18next";
+import React from "react";
 
 const getGreetingTime = (d = DateTime.now()) => {
 
