@@ -2,8 +2,12 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import "./index.css";
 import { useTranslation } from "react-i18next";
 import Footer from "./Footer";
+import store from './lib/store';
+
+import { Provider } from 'react-redux';
 
 // Initialisations
 const lngs = {

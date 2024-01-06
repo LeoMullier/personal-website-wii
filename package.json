@@ -9,14 +9,12 @@
 	"homepage": "https://github.com/LeoMullier/personal-website-wii",
 	"private": true,
 	"dependencies": {
-		"@babel/eslint-parser": "^7.23.3",
 		"@babel/preset-react": "^7.23.3",
 		"@reduxjs/toolkit": "^2.0.1",
 		"@storybook/addon-a11y": "^7.6.7",
 		"@testing-library/jest-dom": "^5.17.0",
 		"@testing-library/react": "^13.4.0",
 		"@testing-library/user-event": "^13.5.0",
-		"eslint": "^8.56.0",
 		"i18next": "^23.7.11",
 		"i18next-browser-languagedetector": "^7.2.0",
 		"luxon": "^3.4.4",
@@ -34,13 +32,6 @@
 		"eject": "react-scripts eject",
 		"storybook": "storybook dev -p 6006",
 		"build-storybook": "storybook build"
-	},
-	"eslintConfig": {
-		"extends": [
-			"react-app",
-			"react-app/jest",
-			"plugin:storybook/recommended"
-		]
 	},
 	"browserslist": {
 		"production": [
@@ -64,7 +55,6 @@
 		"@storybook/react": "^7.6.7",
 		"@storybook/react-webpack5": "^7.6.7",
 		"@storybook/test": "^7.6.7",
-		"eslint-plugin-storybook": "^0.6.15",
 		"prop-types": "^15.8.1",
 		"storybook": "^7.6.7",
 		"webpack": "^5.89.0"
