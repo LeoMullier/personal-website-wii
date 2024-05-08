@@ -1,0 +1,15 @@
+{
+	"title": "Bienvenue sur React utilisant react-i18next",
+	"description": {
+		"part1": "Pour commencer, éditez <1>src/App.js</1> et sauvegardez pour recharger.",
+		"part2": "Changez de langues entre français et anglais avec le bouton ci-dessus."
+	},
+	"counter_one": "Langue changée juste une fois",
+	"counter_other": "Langue déjà changée {{count}} fois",
+	"footer": {
+		"date": "Aujourd'hui nous sommes {{date, DATE_HUGE}}",
+		"date_morning": "Bonjour ! Aujourd'hui nous sommes {{date, DATE_HUGE}} | Bonne journée !",
+		"date_afternoon": "Bonjour ! Aujourd'hui nous sommes {{date, DATE_HUGE}} | Bonne après-midi !",
+		"date_evening": "Bonjour ! Aujourd'hui nous sommes {{date, DATE_HUGE}} | Bonne soirée !"
+	}
+}
