@@ -20,7 +20,11 @@ i18n
 	// for all options read: https://www.i18next.com/overview/configuration-options
 	.init({
 		debug: true,
-		fallbackLng: "en",
+		fallbackLng: ["en", "fr"],
+		detection: {
+			order: ["path"],
+			lookupFromPathIndex: 0,
+		},
 		interpolation: {
 			escapeValue: false, // not needed for react as it escapes by default
 			// format: (value, format, lng) => { // legacy usage
@@ -43,10 +47,8 @@ i18n
 	});
 
 // new usage
-i18n.services.formatter.add("DATE_HUGE", (value, lng, options) => {
-	return DateTime.fromJSDate(value)
-		.setLocale(lng)
-		.toLocaleString(DateTime.DATE_HUGE);
+i18n.services.formatter.add("DATE_HUGE", (value, lng) => {
+	return DateTime.fromJSDate(value).setLocale(lng).toLocaleString(DateTime.DATE_HUGE);
 });
 
 export default i18n;

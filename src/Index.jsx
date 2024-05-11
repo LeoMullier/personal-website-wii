@@ -7,7 +7,7 @@ import App from "./App.jsx";
 import "./i18n.jsx";
 
 // Import files
-import "./index.css";
+import "./Index.css";
 
 // Render the app in the root of HTML page
 ReactDOM.createRoot(document.getElementById("root")).render(
