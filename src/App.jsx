@@ -10,9 +10,12 @@ import LanguagesRouter from "./LanguagesRouter";
 // Import files
 import "./App.css";
 
+// Import utilities
+import { ChangeLanguage } from "./Utilities";
+
 // Entry point of the web application
 function App() {
-	const { t, i18n } = useTranslation(["Personal"]);
+	const { t, i18n } = useTranslation(["Personal", "HealthAndSafety"]);
 	const [count, setCount] = useState(0);
 	const lngs = {
 		en: { nativeName: "English" },
@@ -42,10 +45,7 @@ function App() {
 							fontWeight: i18n.resolvedLanguage === lng ? "bold" : "normal",
 						}}
 						type="submit"
-						onClick={() => {
-							i18n.changeLanguage(lng);
-							setCount(count + 1);
-						}}
+						onClick={() => ChangeLanguage(i18n, lng)}
 					>
 						{lngs[lng].nativeName}
 					</button>

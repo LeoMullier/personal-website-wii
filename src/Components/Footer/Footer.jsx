@@ -18,9 +18,7 @@ import PropTypes from "prop-types";
 
 const Footer = ({ t }) => (
 	<div className="Footer">
-		<div>
-			{t("footer.date", { date: new Date(), context: getGreetingTime() })}
-		</div>
+		<div>{t("footer.date", { date: new Date(), context: getGreetingTime() })}</div>
 	</div>
 );
 

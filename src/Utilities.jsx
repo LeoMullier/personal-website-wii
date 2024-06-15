@@ -33,3 +33,9 @@ export function IsOneValidPathOf(Path, AvailablePaths, StartSeperator, StartSepe
 	// Return the eventual matching path
 	return Result;
 }
+
+// Change the language of the web application using i18n and navigate to the new language
+export function ChangeLanguage(i18n, lng) {
+	i18n.changeLanguage(lng);
+	window.location.href = "/" + lng + window.location.pathname.substring(3);
+}
